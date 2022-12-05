@@ -1,0 +1,39 @@
+.TrainerGym {
+    border: 1px solid hsl(0, 0%, 22%);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 3vh;
+}
+
+.TrainerGym .container {
+    display: grid;
+    grid-template-columns: 90% 10%;
+}
+
+.TrainerGym .location {
+    font-family: "IM FELL Great Primer SC", serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.TrainerGym .icons .icon {
+    width: 50%;
+    height: 40%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    color: #FF3636;
+}
+
+.TrainerGym .EditingContainer {
+    border: 1px solid hsl(0, 0%, 22%);
+    border-radius: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 90% 10%;
+}
+
+.TrainerGym .EditingContainer .icons {
+    position: relative;
+    top: 4vh;
+}
