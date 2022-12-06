@@ -11,3 +11,5 @@ export * from "./editTrainersGymLocation";
 export * from "./deleteTrainersGym";
 
 export * from "./getSignedInUserQuery";
+
+export * from "./updateTrainerInofrmationMutation";
