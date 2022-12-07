@@ -7,3 +7,7 @@ export { default as Notice } from "./Notice";
 export { default as NavBar } from "./NavBar";
 
 export { default as TrainersGym } from "./TrainersGym";
+
+export { default as Modal } from "./Modal";
+
+export * from "./Notify";

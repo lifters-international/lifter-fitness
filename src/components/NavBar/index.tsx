@@ -48,7 +48,7 @@ const NavBar : React.FC<Props> = ({ token }) => {
 
                 <a>Sessions</a>
 
-                <a>Questions</a>
+                <a>Messges</a>
 
                 <a href="/profile/preview">Profile Preview</a>
             </div>

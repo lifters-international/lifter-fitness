@@ -13,3 +13,7 @@ export * from "./deleteTrainersGym";
 export * from "./getSignedInUserQuery";
 
 export * from "./updateTrainerInofrmationMutation";
+
+export * from "./updateTrainerPassword";
+
+export * from "./addNewTrainersGym";
