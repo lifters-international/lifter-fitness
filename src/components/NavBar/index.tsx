@@ -46,9 +46,7 @@ const NavBar : React.FC<Props> = ({ token }) => {
 
                 <a href={dashBoardLink} target="_blank" rel="noopener noreferrer" >Dashboard</a>
 
-                <a>Sessions</a>
-
-                <a>Messges</a>
+                <a>Clients</a>
 
                 <a href="/profile/preview">Profile Preview</a>
             </div>

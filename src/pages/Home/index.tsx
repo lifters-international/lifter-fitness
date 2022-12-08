@@ -151,7 +151,7 @@ export default function Home() {
         else if (
             authentication.error[0].message === "jwt expired"
             ||
-            authentication.error[0].message === "User does not exist."
+            authentication.error[0].message === "Trainer does not exist."
         ) return <Navigate to="/logIn" replace={true} />
         else return <Error {...authentication.error[0]} reload={true} />;
     }
@@ -222,6 +222,18 @@ export default function Home() {
                                 }}
                             />
                         </div>
+                    </div>
+
+                    <div className="EditProfileInput">
+                        <label className="EditProfileInputTitle" htmlFor="cost">Monthly Subscription Cost</label>
+                        <input className="EditProfileInputField" type="number" title="cost" defaultValue={signedInTrainerData.data?.price} 
+                            onChange={(e) => {
+                                setTrainerData({
+                                   ...trainerData,
+                                    price: Number(e.target.value)
+                                });
+                            }}
+                        />
                     </div>
 
                     <div className="EditProfileBio">

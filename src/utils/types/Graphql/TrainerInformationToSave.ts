@@ -3,4 +3,5 @@ export type TrainerInformationToSave = {
     email?: string;
     bio?: string;
     profilePicture?: string;
+    price?: number;
 }

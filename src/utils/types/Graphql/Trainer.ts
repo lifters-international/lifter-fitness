@@ -8,4 +8,5 @@ export type Trainer = {
     gyms?: TrainersGym[];
     profilePicture: string;
     onBoardCompleted: boolean;
+    price: number;
 };
