@@ -48,7 +48,7 @@ const NavBar : React.FC<Props> = ({ token }) => {
 
                 <a>Clients</a>
 
-                <a>Videos</a>
+                <a href="/videos">Videos</a>
 
                 <a href="/profile/preview">Profile Preview</a>
             </div>
