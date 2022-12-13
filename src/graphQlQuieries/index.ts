@@ -17,3 +17,5 @@ export * from "./updateTrainerInofrmationMutation";
 export * from "./updateTrainerPassword";
 
 export * from "./addNewTrainersGym";
+
+export * from "./getTrainersDetailsById";

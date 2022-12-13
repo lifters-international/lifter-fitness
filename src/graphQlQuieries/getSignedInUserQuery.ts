@@ -6,6 +6,7 @@ export const getSignedInUserQuery = `
             email
             bio
             profilePicture
+            bannerImage
             onBoardCompleted
             gyms {
                 id

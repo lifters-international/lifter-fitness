@@ -19,6 +19,9 @@ export default function Home() {
     const imageInputRef = useRef<HTMLInputElement>(null);
     const imageContainerRef = useRef<HTMLDivElement>(null);
 
+    const bannerImageRef = useRef<HTMLInputElement>(null);
+    const bannerImageContainerRef = useRef<HTMLDivElement>(null);
+
     const [ notify, setNotify ] = useState<NotifyStateManager>({ show: false, message: "", type: "success" });
 
     const [ passwords, setPasswords ] = useState<{
@@ -138,6 +141,53 @@ export default function Home() {
         }
     }
 
+    const saveBannerImage = async ( newImage: string ) => {
+        await saveUserData.saveAsync({
+            token: authentication.token!,
+            trainerInfor: {
+                bannerImage: newImage
+            }
+        })
+    }
+
+    const handleBannerImageChange = async () => {
+        if ( bannerImageRef.current ) {
+            const form = new FormData();
+            const image = bannerImageRef.current.files![0];
+
+            if ( image ) {
+                form.append("image", image);
+                form.append("token", authentication.token!);
+
+                const req = await fetch(getImageUploadApi()+"/trainer/banner", {
+                    method: "POST",
+                    body: form
+                });
+
+                let result =  await req.json();
+
+                let type: NotifyStateManagerType = "success";
+
+                let message = "";
+
+                if ( result.error ) {
+                    type = "error";
+                    message = "There was a problem uploading a new banner image please try again later.";
+                }
+
+                if ( result.url ) message = "Your banner image has been updated successfully.";
+
+                setNotify({ type, show: true, message });
+
+                if ( bannerImageContainerRef.current && result.url ) {
+                    bannerImageContainerRef.current.style.backgroundImage = `url(${result.url})`;
+                    saveBannerImage(result.url);
+                }
+            }
+        }
+    }
+
+
     if (authentication.loading) return <Loading />;
 
     if (authentication.error) {
@@ -165,6 +215,12 @@ export default function Home() {
             <NavBar token={authentication.token!} />
 
             <div>
+
+                <div className="EditProfilePicture" style={{ backgroundImage: `url(${signedInTrainerData.data!.bannerImage})`}} ref={bannerImageContainerRef}>
+                    <button className="EditProfilePictureButton" type="button" onClick={ () => bannerImageRef.current?.click() } >Upload New Banner Image</button>
+                    <input type="file" accept=".png, .jpeg, .jpg, .svg" name="image" style={{ display: "none" }} title="image-select" ref={bannerImageRef} onChange={handleBannerImageChange} />
+                </div>
+
                 <div className="EditProfilePicture" style={{ backgroundImage: `url(${signedInTrainerData.data!.profilePicture})` }} ref={imageContainerRef}>
                     <button className="EditProfilePictureButton" type="button" onClick={ () => imageInputRef.current?.click() } >Upload New Profile Picture</button>
                     <input type="file" accept=".png, .jpeg, .jpg, .svg" name="image" style={{ display: "none" }} title="image-select" ref={imageInputRef} onChange={handleInputImageChange} />

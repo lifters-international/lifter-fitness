@@ -3,5 +3,6 @@ export type TrainerInformationToSave = {
     email?: string;
     bio?: string;
     profilePicture?: string;
+    bannerImage?: string;
     price?: number;
 }
