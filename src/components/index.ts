@@ -17,3 +17,5 @@ export * from "./RegisterButton";
 export * from "./LabelInputDiv";
 
 export * from "./Notify";
+
+export * from "./PreviewVideo";

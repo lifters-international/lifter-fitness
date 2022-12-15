@@ -1,0 +1,30 @@
+.EditVideoPage .PreviewVideo {
+    width: 90vw;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+}
+
+.EditVideoPage .PreviewVideo .VideoContainer {
+    width: 88vw;
+    left: 1.5vw;
+    margin: 0 auto;
+}
+
+.EditVideoPage .PreviewVideo .imageContainer .timeStamp {
+    left: 83vw;
+}
+
+.EditVideoPage .SlideShow .tabs {
+    border-bottom: 1px solid hsl(0, 0%, 22%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.EditVideoPage .SlideShow .tabs .tab {
+    margin-bottom: 10px;
+}
+
+.EditVideoPage .SlideShow .tabs .tab.showing {
+    border-bottom: 1px solid #FF3636;
+}

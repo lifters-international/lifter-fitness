@@ -5,9 +5,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 
 import { useSessionHandler } from "../../hooks";
 
-import { Loading, Error, NavBar, LabelInputDiv, RegisterButton } from "../../components";
-
-import { PreviewVideo } from "./VideoPreview";
+import { Loading, Error, NavBar, LabelInputDiv, RegisterButton, PreviewVideo } from "../../components";
 
 import { FileUploader } from "react-drag-drop-files";
 
@@ -180,7 +178,7 @@ export default function CreateVideo() {
                         return setError(req.errors[0].message)
                     }
 
-                    navigate(`video/${req.data.createTrainersVideo.id}/edit`)
+                    navigate(`/video/${req.data.createTrainersVideo.id}/edit`)
 
                 } } />
             </div>

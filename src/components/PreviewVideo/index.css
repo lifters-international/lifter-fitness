@@ -1,0 +1,31 @@
+.PreviewVideo .VideoContainer {
+    width: 60vw;
+    height: 40vh;
+    object-fit: fill;
+    position: relative;
+    left: 6vw;
+    border: 1px solid hsl(0, 0%, 22%);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.PreviewVideo .VideoContainer.hide {
+    display: none;
+}
+
+.PreviewVideo .imageContainer.hide {
+    display: none;
+}
+
+.PreviewVideo .imageContainer .timeStamp {
+    border: 1px solid hsl(0, 0%, 22%);
+    border-radius: 10px;
+    padding: 10px;
+    color: rgb(184, 181, 181);
+    z-index: 2;
+    position: relative;
+    bottom: 5vh;
+    left: 60vw;
+    width: 6vw;
+    text-align: center;
+}

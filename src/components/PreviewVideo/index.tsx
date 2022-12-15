@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 
+import "./index.css";
+
 export type Props = {
     thumbnailImage: string;
     videoUrl: string;
@@ -25,7 +27,7 @@ export const PreviewVideo: React.FC<Props> = ({ thumbnailImage, videoUrl }) => {
                     setPreview(false);
                     vidRef.current?.play();
                 }} />
-                <span className="timeStamp">{time} / { vidRef.current?.duration ? vidRef.current.duration.toFixed(2) : 0}</span>
+                <div className="timeStamp">{time} / { vidRef.current?.duration ? vidRef.current.duration.toFixed(2) : 0}</div>
             </div>
 
             <video className={`VideoContainer ${preview ? " hide" : ""}`} controls src={videoUrl} ref={vidRef} />
