@@ -10,4 +10,10 @@ export { default as TrainersGym } from "./TrainersGym";
 
 export { default as Modal } from "./Modal";
 
+export { default as SearchBar } from "./SearchBar";
+
+export * from "./RegisterButton";
+
+export * from "./LabelInputDiv";
+
 export * from "./Notify";

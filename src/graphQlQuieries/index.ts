@@ -19,3 +19,5 @@ export * from "./updateTrainerPassword";
 export * from "./addNewTrainersGym";
 
 export * from "./getTrainersDetailsById";
+
+export * from "./createTrainersVideo";

@@ -8,6 +8,8 @@ import CreateAccount from "./pages/CreateAccount";
 import LogIn from "./pages/LogIn";
 import ProfilePreviewWithToken from "./pages/ProfilePreviewWithToken";
 import ProfilePreview from "./pages/ProfilePreview";
+import VideosPage from "./pages/Videos";
+import CreateVideoPage from "./pages/CreateVideo";
 
 function App() {
   return (
@@ -22,6 +24,10 @@ function App() {
         <Route path="/profile/preview/:token" element={<ProfilePreviewWithToken />} />
 
         <Route path="/profile/preview" element={<ProfilePreview />} />
+
+        <Route path="/videos" element={<VideosPage />} />
+
+        <Route path="/createVideo" element={<CreateVideoPage />} />
 
       </Routes>    
   );

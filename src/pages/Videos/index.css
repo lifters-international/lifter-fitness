@@ -1,0 +1,21 @@
+.VideosPage .container .header {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 1vh;
+}
+
+.VideosPage .container .header .videoSearchView {
+    width: 100%;
+}
+
+.VideosPage .container .header .videoSearchView_input {
+    width: 90vw;
+    height: 3vh;
+}
+
+.VideosPage .container .header .createVideo {
+    position: relative;
+    bottom: 0.5vh;
+    right: 3vw;
+}

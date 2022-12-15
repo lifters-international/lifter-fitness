@@ -90,4 +90,3 @@ export type TrainersDetails = {
 
     onBoardCompleted: boolean;
 } & TrainersSummary;
-
