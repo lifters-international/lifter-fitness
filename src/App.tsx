@@ -24,7 +24,7 @@ function App() {
         <Route path="/profile/preview/:token" element={<ProfilePreviewWithToken />} />
 
         <Route path="/profile/preview" element={<ProfilePreview />} />
-
+        
         <Route path="/videos" element={<VideosPage />} />
 
         <Route path="/createVideo" element={<CreateVideoPage />} />

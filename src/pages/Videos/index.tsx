@@ -14,7 +14,6 @@ export default function Videos() {
 
     const authentication = useSessionHandler();
 
-
     if (authentication.loading) return <Loading />;
 
     if (authentication.error) {
@@ -55,5 +54,4 @@ export default function Videos() {
             </div>
         </div>
     )
-
 }
