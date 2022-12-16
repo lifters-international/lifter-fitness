@@ -11,3 +11,5 @@ export * from "./TrainersGym";
 export * from "./RequestResult";
 
 export * from "./TrainerInformationToSave";
+
+export * from "./TrainerVideoInputInformation";

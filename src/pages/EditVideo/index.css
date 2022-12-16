@@ -6,13 +6,68 @@
 }
 
 .EditVideoPage .PreviewVideo .VideoContainer {
-    width: 88vw;
-    left: 1.5vw;
+    width: 52vw;
+    left: 20vw;
     margin: 0 auto;
 }
 
 .EditVideoPage .PreviewVideo .imageContainer .timeStamp {
-    left: 83vw;
+    left: 66vw;
+}
+
+.EditVideoPage .VideoDetailsContainer .vidDetails {
+    width: 54vw;
+    position: relative;
+    left: 25vw;
+    top: -4vh;
+}
+
+.EditVideoPage .VideoDetailsContainer .vidDetails .title {
+    color: rgb(120, 120, 120);
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+
+.EditVideoPage .VideoDetailsContainer .vidDetails .dets {
+    color: rgb(75, 75, 75);
+    font-size: 20px;
+    display: flex;
+    gap: 25vw;
+}
+
+.EditVideoPage .VideoDetailsContainer .vidDetails .dets div {
+    display: flex;
+}
+
+.EditVideoPage .VideoDetailsContainer .vidDetails .dets .buttons {
+    gap: 5vw;
+    width: 20vw;
+}
+
+.EditVideoPage .VideoDetailsContainer .vidDetails .dets .buttons .likeDislike {
+    display: flex;
+    width: 15vw;
+    gap: 2px;
+    border: 1px solid rgb(85, 85, 85);
+    background: hsl(0, 0%, 7%);
+    border-radius: 10px;
+    padding: 5px;
+    color: rgb(69, 69, 69);
+}
+
+.EditVideoPage .VideoDetailsContainer .vidDetails .dets .buttons .likeDislike .holder {
+    display: flex;
+    gap: 10px;
+}
+
+.EditVideoPage .VideoDetailsContainer .vidDetails .dets .buttons .likeDislike .holder.like {
+    border-right: 1px solid rgb(85, 85, 85);
+    width: 55%;
+}
+
+.EditVideoPage .VideoDetailsContainer .vidDetails .dets .buttons .likeDislike .holder span {
+    position: relative;
+    top: 0.4vh;
 }
 
 .EditVideoPage .SlideShow .tabs {
@@ -27,4 +82,55 @@
 
 .EditVideoPage .SlideShow .tabs .tab.showing {
     border-bottom: 1px solid #FF3636;
+}
+
+.EditVideoPage .SlideShow .content .editVideoDetails {
+    width: 90vw;
+}
+
+.EditVideoPage .SlideShow .content .editVideoDetails .thumbnail {
+    width: 50vw;
+    height: 30vh;
+    position: relative;
+    left: 22vw;
+}
+
+
+@media only screen and (max-width: 845px) {
+    .EditVideoPage .PreviewVideo .VideoContainer {
+        width: 100%;
+        left: 0;
+    }
+
+    .EditVideoPage .PreviewVideo .imageContainer .timeStamp {
+        left: 70vw;
+        width: 20vw;
+    }
+
+    .EditVideoPage .VideoDetailsContainer .vidDetails {
+        top: -1.5vw;
+        left: 0;
+        margin-bottom: 20px;
+    }
+
+    .EditVideoPage .VideoDetailsContainer .vidDetails .title {
+        width: 98vw;
+        margin-bottom: 12px;
+    }
+
+    .EditVideoPage .VideoDetailsContainer .vidDetails .dets {
+        gap: 22vw;
+    }
+
+    .EditVideoPage .VideoDetailsContainer .vidDetails .dets .buttons {
+        justify-content: space-between;
+    }
+
+    .EditVideoPage .VideoDetailsContainer .vidDetails .dets .buttons .likeDislike {
+        width: 45vw;
+    }
+
+    .EditVideoPage .VideoDetailsContainer .vidDetails .dets .buttons .likeDislike .holder.like {
+        width: 12vw;
+    }
 }

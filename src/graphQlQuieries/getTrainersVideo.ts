@@ -26,6 +26,11 @@ export const getTrainersVideo = `
             allowDislikes
             isPublic
             price
+            trainer {
+                id
+                name
+                profilePicture
+            }
         }
     }
 `;

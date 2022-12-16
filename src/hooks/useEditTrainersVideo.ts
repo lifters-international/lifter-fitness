@@ -25,6 +25,11 @@ export type EditTrainersVideoState = {
         allowDislikes: boolean;
         isPublic: boolean;
         price: number;
+        trainer: {
+            id: string;
+            name: string;
+            profilePicture: string;
+        };
         commentCount: number;
         likeCount: number;
         disLikeCount: number;
@@ -61,6 +66,11 @@ export const useEditTrainersVideo = ( token : string, videoId: string ) => {
             allowDislikes: boolean;
             isPublic: boolean;
             price: number;
+            trainer: {
+                id: string;
+                name: string;
+                profilePicture: string;
+            };
         } = req.data.getTrainersVideo;
 
         if ( req.errors ) {
