@@ -13,3 +13,5 @@ export * from "./RequestResult";
 export * from "./TrainerInformationToSave";
 
 export * from "./TrainerVideoInputInformation";
+
+export * from "./GetAllTrainerVideosQueryResult";

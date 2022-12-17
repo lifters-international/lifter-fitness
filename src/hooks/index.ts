@@ -9,3 +9,5 @@ export * from "./useSignedInTrainerData";
 export * from "./useGetTrainerDetails";
 
 export * from "./useEditTrainersVideo";
+
+export * from "./useGetAllTrainersVideos";

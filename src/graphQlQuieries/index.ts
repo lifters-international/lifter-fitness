@@ -27,3 +27,5 @@ export * from "./getTrainersVideo";
 export * from "./deleteTrainersVideo";
 
 export * from "./updateTrainersVideo";
+
+export * from "./getAllTrainersVideos";
