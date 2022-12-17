@@ -1,11 +1,10 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 
 import { useSessionHandler, useEditTrainersVideo } from "../../hooks";
 
-import { Loading, Error, NavBar, SearchBar, TrainersGym, Modal, NotifyStateManager, NotifyStateManagerType, Notify, Notice, PreviewVideo } from "../../components";
+import { Loading, Error, NavBar, Notice, PreviewVideo } from "../../components";
 
-import { MdOutlineSlowMotionVideo } from "react-icons/md";
 import { BiLike, BiDislike } from "react-icons/bi";
 import { IoMdShareAlt } from "react-icons/io";
 import { BiPencil } from "react-icons/bi";

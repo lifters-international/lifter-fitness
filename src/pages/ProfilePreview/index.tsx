@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 import { useSessionHandler, useGetTrainerDetails } from '../../hooks';
 
@@ -9,13 +9,9 @@ import ReactStars from "react-rating-stars-component";
 
 import { MdVerifiedUser } from "react-icons/md";
 
-import "./index.css"
+import "./index.css";
 
-export type Props = {};
-
-const TrainersDetails: React.FC<Props> = ({ }: Props) => {
-    const navigation = useNavigate();
-
+const TrainersDetails: React.FC = () => {
     const authentication = useSessionHandler();
     const trainerDetails = useGetTrainerDetails(authentication.token!);
 

@@ -1,9 +1,8 @@
-import React, { useState, useRef } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 
 import { useSessionHandler, useGetAllTrainersVideos } from "../../hooks";
 
-import { Loading, Error, NavBar, SearchBar, TrainersGym, Modal, NotifyStateManager, NotifyStateManagerType, Notify } from "../../components";
+import { Loading, Error, NavBar, SearchBar } from "../../components";
 
 import { MdOutlineSlowMotionVideo } from "react-icons/md";
 
