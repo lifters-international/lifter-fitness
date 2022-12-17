@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 
-import { Loading, Error, NavBar, LabelInputDiv, RegisterButton, PreviewVideo } from "../../components";
+import { Loading, Error, NavBar, AlertPrompt, AlertPromptProps, LabelInputDiv, RegisterButton } from "../../components";
 
 import { FileUploader } from "react-drag-drop-files";
 
 import { getServerUrl, fetchGraphQl, TrainerVideoInputInformtion } from "../../utils";
+
+import { deleteTrainersVideo, updateTrainersVideo } from "../../graphQlQuieries";
 
 export type Props = {
     token: string
@@ -25,6 +27,8 @@ export type Props = {
 export const EditVideoDetails: React.FC<Props> = ({ token, thumbnail, title, description, price, isPublic, clientOnly, allowLikes, allowDislikes }) => {
     const navigate = useNavigate();
 
+    let { videoId } = useParams();
+
     const [thumbnailImage, setThumbnailImage] = useState(null);
 
     const [loading, setLoading] = useState(false);
@@ -32,6 +36,38 @@ export const EditVideoDetails: React.FC<Props> = ({ token, thumbnail, title, des
     const [error, setError] = useState<string | null>(null);
 
     const [formState, setFormState] = useState<TrainerVideoInputInformtion>();
+
+    const [ alertState, setAlertState] = useState<AlertPromptProps>({
+        show: false, 
+        message: "",
+        type: [],
+        onOkay: ( answer?: string ) => {
+
+        },
+
+        onCancel: () => {
+            setAlertState({ ...alertState, show: false })
+        }
+    });
+
+    useEffect( () => {
+        if ( thumbnailImage ) {
+            setLoading(true)
+            uploadFile(thumbnailImage)
+            .then( res => {
+                setLoading(false);
+                
+                if ( res.url ) {
+                    setFormState({
+                        ...formState,
+                        thumbnail: res.url
+                    });
+                }else {
+                    setError("There was a problem uploading the thumbnail.")
+                }
+            })
+        }
+    }, [ thumbnailImage ]);
 
     if (loading) return <Loading />;
 
@@ -56,8 +92,75 @@ export const EditVideoDetails: React.FC<Props> = ({ token, thumbnail, title, des
         return result;
     }
 
+    const debug = () => {
+        debugger;
+        return <></>
+    }
     return (
         <div className="FormContainer CreateVideo editVideoDetails">
+            <AlertPrompt {...alertState} />
+
+            <div className="editVidButtons">
+
+                <RegisterButton title="Save Video Settings" onClick={ async () => {
+                    setLoading(true);
+                    let req = await fetchGraphQl(updateTrainersVideo, { updateTrainersVideoId: videoId, token, input: formState });
+                    setLoading(false);
+                    if ( req.errors ) {
+                        setAlertState( prev => {
+                            return {
+                                ...prev,
+                                show: true,
+                                message: "There was an error while saving this video", 
+                                type: [ "Ok" ],
+                                onOkay: () => {}
+                            }
+                        })
+                    }else {
+                        if ( req.data.updateTrainersVideo.type === "successful" ) {
+                            setAlertState( prev => {
+                                return {
+                                    ...prev,
+                                    show: true, 
+                                    message: "Video updated successfully",
+                                    type: [ "Ok" ],
+                                    onCancel: () => {
+                                        navigate(0);
+                                    }
+                                }
+                            })
+                        }
+                    }
+                } } />
+
+                <RegisterButton title="Delete Video" onClick={() => {
+                    setAlertState({
+                        ...alertState,
+                        show: true,
+                        message: "Are you sure you would like to delete this video?",
+                        type: [ "Ok", "Cancel" ],
+                        onOkay: async () => {
+                            setLoading(true);
+                            let req = await fetchGraphQl(deleteTrainersVideo, { deleteTrainersVideoId: videoId, token })
+                            setLoading(true)
+                            if ( req.errors ) {
+                                setAlertState( prev => {
+                                    return {
+                                        ...prev,
+                                        show: true,
+                                        message: "There was an error while deleting the video.",
+                                        type: [ "Ok" ],
+                                        onOkay: () => {}
+                                    }
+                                })
+                            }else {
+                                if ( req.data.deleteTrainersVideo.type === "successful"  ) navigate("/videos")
+                            }
+                        }
+                    })
+                } } />
+            </div>
+
             <h1>Edit Video</h1>
 
             <img src={formState?.thumbnail ? formState.thumbnail : thumbnail} alt="thumbnail" className="thumbnail" />
@@ -112,9 +215,9 @@ export const EditVideoDetails: React.FC<Props> = ({ token, thumbnail, title, des
                     <label htmlFor="publicVideo">Video is public</label>
                     <input
                         type="checkbox"
-                        name="yesPublic"
+                        name="publicVideo"
                         placeholder="Yes it is public"
-                        checked={isPublic}
+                        defaultChecked={isPublic}
                         onChange={
                             (e) => {
                                 setFormState({
@@ -128,6 +231,8 @@ export const EditVideoDetails: React.FC<Props> = ({ token, thumbnail, title, des
                 </div>
             </LabelInputDiv>
 
+            
+
             <LabelInputDiv>
                 <div>
                     <label htmlFor="clientOnly">Is Video For Clients Only</label>
@@ -135,7 +240,7 @@ export const EditVideoDetails: React.FC<Props> = ({ token, thumbnail, title, des
                         type="checkbox"
                         name="clientOnly"
                         placeholder="Yes it is client only"
-                        checked={clientOnly}
+                        defaultChecked={clientOnly}
                         onChange={
                             (e) => {
                                 setFormState({
@@ -158,7 +263,7 @@ export const EditVideoDetails: React.FC<Props> = ({ token, thumbnail, title, des
                         type="checkbox"
                         name="allowLikes"
                         placeholder="Yes it is likeable"
-                        checked={allowLikes}
+                        defaultChecked={allowLikes}
                         onChange={
                             (e) => {
                                 setFormState({
@@ -181,7 +286,7 @@ export const EditVideoDetails: React.FC<Props> = ({ token, thumbnail, title, des
                         type="checkbox"
                         name="allowdisLikes"
                         placeholder="Yes it is likeable"
-                        checked={allowDislikes}
+                        defaultChecked={allowDislikes}
                         onChange={
                             (e) => {
                                 setFormState({
@@ -197,7 +302,7 @@ export const EditVideoDetails: React.FC<Props> = ({ token, thumbnail, title, des
 
             </LabelInputDiv>
 
-            <RegisterButton title="Save Video Settings" onClick={() => {} } />
+
         </div>
     )
 }

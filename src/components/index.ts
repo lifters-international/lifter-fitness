@@ -19,3 +19,5 @@ export * from "./LabelInputDiv";
 export * from "./Notify";
 
 export * from "./PreviewVideo";
+
+export * from "./AlertPrompt";

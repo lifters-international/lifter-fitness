@@ -23,3 +23,7 @@ export * from "./getTrainersDetailsById";
 export * from "./createTrainersVideo";
 
 export * from "./getTrainersVideo";
+
+export * from "./deleteTrainersVideo";
+
+export * from "./updateTrainersVideo";
