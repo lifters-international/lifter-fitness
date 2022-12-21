@@ -15,7 +15,6 @@ export const getAllTrainersVideos = `
             likes {
                 id
             }
-            price
             thumbnail
             title
             updatedAt

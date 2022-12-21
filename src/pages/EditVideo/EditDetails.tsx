@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-import { Loading, Error, NavBar, AlertPrompt, AlertPromptProps, LabelInputDiv, RegisterButton } from "../../components";
+import { Loading, Error, AlertPrompt, AlertPromptProps, LabelInputDiv, RegisterButton } from "../../components";
 
 import { FileUploader } from "react-drag-drop-files";
 
@@ -21,10 +21,9 @@ export type Props = {
     allowLikes: boolean;
     allowDislikes: boolean;
     isPublic: boolean;
-    price: number;
 }
 
-export const EditVideoDetails: React.FC<Props> = ({ token, thumbnail, title, description, price, isPublic, clientOnly, allowLikes, allowDislikes }) => {
+export const EditVideoDetails: React.FC<Props> = ({ token, thumbnail, title, description, isPublic, clientOnly, allowLikes, allowDislikes }) => {
     const navigate = useNavigate();
 
     let { videoId } = useParams();
@@ -92,10 +91,6 @@ export const EditVideoDetails: React.FC<Props> = ({ token, thumbnail, title, des
         return result;
     }
 
-    const debug = () => {
-        debugger;
-        return <></>
-    }
     return (
         <div className="FormContainer CreateVideo editVideoDetails">
             <AlertPrompt {...alertState} />
@@ -193,18 +188,6 @@ export const EditVideoDetails: React.FC<Props> = ({ token, thumbnail, title, des
                         setFormState({
                             ...formState,
                             description: e.target.value
-                        })
-                    }
-                } />
-            </LabelInputDiv>
-
-            <LabelInputDiv>
-                <label htmlFor="price-cost">Cost Of Video For Non-Clients</label>
-                <input placeholder="Video's Cost" type="number" name="price-cost" defaultValue={price} min={0} onChange={
-                    (e) => {
-                        setFormState({
-                            ...formState,
-                            price: Number(e.target.value)
                         })
                     }
                 } />

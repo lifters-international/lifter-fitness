@@ -7,7 +7,6 @@ export type GetAllTrainersVideo = {
     id: string;
     isPublic: boolean;
     likes: { id: string }[];
-    price: number;
     thumbnail: string;
     title: string;
     updatedAt: number;

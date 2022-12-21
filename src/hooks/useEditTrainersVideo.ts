@@ -24,7 +24,6 @@ export type EditTrainersVideoState = {
         allowLikes: boolean;
         allowDislikes: boolean;
         isPublic: boolean;
-        price: number;
         trainer: {
             id: string;
             name: string;
@@ -65,7 +64,6 @@ export const useEditTrainersVideo = ( token : string, videoId: string ) => {
             allowLikes: boolean;
             allowDislikes: boolean;
             isPublic: boolean;
-            price: number;
             trainer: {
                 id: string;
                 name: string;

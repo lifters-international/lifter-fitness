@@ -14,6 +14,4 @@ export type TrainerVideoInputInformtion = {
     allowDislikes?: boolean;
 
     isPublic?: boolean;
-
-    price?: number;
 }

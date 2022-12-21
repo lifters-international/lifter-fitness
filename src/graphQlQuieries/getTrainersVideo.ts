@@ -25,7 +25,6 @@ export const getTrainersVideo = `
             allowLikes
             allowDislikes
             isPublic
-            price
             trainer {
                 id
                 name
