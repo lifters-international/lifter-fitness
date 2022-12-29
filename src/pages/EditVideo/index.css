@@ -102,6 +102,73 @@
     gap: 3vw;
 }
 
+.EditVideoPage .VideoAnaylsis .summary-container {
+    display: grid;
+    grid-template-columns: repeat(5, 20vw);
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+}
+
+.EditVideoPage .VideoAnaylsis .summary-container .sum {
+    background: rgb(14, 14, 14);
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 1vw;
+    height: 20vh;
+}
+
+.EditVideoPage .VideoAnaylsis .summary-container .sum .title {
+    text-align: center;
+    color: rgb(39, 38, 38);
+}
+
+.EditVideoPage .VideoAnaylsis .summary-container .sum .count {
+    font-size: 60px;
+    text-align: center;
+    position: relative;
+    top: 4vh;
+    color: rgb(73, 70, 70);
+}
+
+.EditVideoPage .VideoAnaylsis .summary-container .sum .hover {
+    display: flex;
+    gap: 0.5vw;
+    position: relative;
+    top: 6vh;
+    left: 6.6vw;
+    font-size: 20px;
+}
+
+.EditVideoPage .VideoAnaylsis .summary-container .sum .hover.up {
+    color: rgb(36, 206, 36);
+}
+
+.EditVideoPage .VideoAnaylsis .summary-container .sum .hover.down {
+    color: #FF3636;
+}
+
+.EditVideoPage .VideoAnaylsis .chartsContainer, .EditVideoPage .VideoAnaylsis .pieContainer {
+    background: rgb(8, 8, 8);
+    display: grid;
+    grid-template-columns: repeat(2, 47vw);
+    width: 90vw;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 3vh;
+}
+
+.EditVideoPage .VideoAnaylsis .pieContainer {
+    grid-template-columns: repeat(4, 23vw);
+}
+
+.EditVideoPage .VideoAnaylsis .chartsContainer .charts .title, .EditVideoPage .VideoAnaylsis .pieContainer .title {
+    color: rgb(88, 87, 87);
+    text-align: center;
+    font-size: 22px;
+}
+
 
 @media only screen and (max-width: 845px) {
     .EditVideoPage .PreviewVideo .VideoContainer {
@@ -139,5 +206,25 @@
 
     .EditVideoPage .VideoDetailsContainer .vidDetails .dets .buttons .likeDislike .holder.like {
         width: 12vw;
+    }
+
+    .EditVideoPage .VideoAnaylsis .summary-container {
+        grid-template-columns: repeat(1, 80vw);
+        width: 80vw;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .EditVideoPage .VideoAnaylsis .summary-container .sum {
+        margin-bottom: 1vh;
+    }
+
+    .EditVideoPage .VideoAnaylsis .summary-container .sum .hover {
+        top: 5vh;
+        left: 30vw;
+    }
+
+    .EditVideoPage .VideoAnaylsis .chartsContainer, .EditVideoPage .VideoAnaylsis .pieContainer {
+        grid-template-columns: repeat(1, 80vw);
     }
 }

@@ -12,6 +12,8 @@ export { default as Modal } from "./Modal";
 
 export { default as SearchBar } from "./SearchBar";
 
+export { default as ReactStars } from "./ReactStars";
+
 export * from "./RegisterButton";
 
 export * from "./LabelInputDiv";

@@ -11,3 +11,7 @@ export * from "./useGetTrainerDetails";
 export * from "./useEditTrainersVideo";
 
 export * from "./useGetAllTrainersVideos";
+
+export * from "./useUserGetAllTrainerVideo";
+
+export * from "./useGetTrainerVideoAnalytics";

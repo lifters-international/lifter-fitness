@@ -24,11 +24,8 @@ export type TrainersSummary = {
 export type TrainersRatings = {
     id: string
     rating: number;
-    lifter: {
-        id: string;
-        username: string;
-        profilePicture: string;
-    };
+    lifterName: string;
+    lifterProfilePicture: string;
     comment: string;
     createdAt: number;
     trainer?: Trainers;
@@ -90,3 +87,73 @@ export type TrainersDetails = {
 
     onBoardCompleted: boolean;
 } & TrainersSummary;
+
+export type TrainerVideoSummary = {
+    id: string;
+    clientOnly: boolean;
+    duration: number;
+    thumbnail: string;
+    isClient: boolean;
+    title: string;
+    updatedAt: number;
+    views: number
+}
+
+export type TrainersVideoAnalysis = {
+    totalViews: number;
+    
+    watchTime: {
+        averageWatchTime: number;
+        averageClientWatchTime: number;
+        averageNonClientWatchTime: number;
+    },
+
+    viewCategory: {
+        views: {
+            gender: {
+                maleViews: number;
+                femaleViews: number;
+                other: number;
+            },
+
+            age: {
+                under18: number;
+                above18under30: number;
+                above30under50: number;
+                above50: number;
+            },
+
+            client: {
+                clientViews: number;
+                nonClientViews: number;
+            }
+        },
+
+        months: {
+            thisMonthViews: number;
+            lastMonthViews: number;
+            thisMonthClientViews: number;
+            lastMonthClientViews: number;
+            thisMonthNonClientViews: number;
+            lastMonthNonClientViews: number;
+        }
+    },
+
+    engagementCategory: {
+        totalEngagement: number;
+        clientEngagement: number
+        NonClientEngagement: number;
+    },
+
+    likesAndDislikesCategory: {
+        likes: {
+            clientLikes: number;
+            nonClientLikes: number;
+        },
+
+        disLikes: {
+            clientDislike: number;
+            nonClientDislike: number;
+        }
+    }
+}

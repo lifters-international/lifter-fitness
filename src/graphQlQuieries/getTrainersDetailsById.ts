@@ -18,11 +18,8 @@ export const getTrainersDetailsById = `
             ratings {
               comment
               rating
-              lifter {
-                id
-                username
-                profilePicture
-              }
+              lifterName
+              lifterProfilePicture
               id
               createdAt
             }

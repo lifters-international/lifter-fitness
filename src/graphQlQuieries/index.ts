@@ -29,3 +29,7 @@ export * from "./deleteTrainersVideo";
 export * from "./updateTrainersVideo";
 
 export * from "./getAllTrainersVideos";
+
+export * from "./userGetAllTrainerVideo";
+
+export * from "./getTrainerVideoAnaylsis";

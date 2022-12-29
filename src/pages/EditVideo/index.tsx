@@ -12,6 +12,7 @@ import { SiGoogleanalytics } from "react-icons/si";
 import { AiOutlineMessage, AiOutlineDownload } from "react-icons/ai";
 
 import { EditVideoDetails } from "./EditDetails";
+import { VideoAnaylsis } from "./VideoAnalysis";
 
 import "./index.css";
 
@@ -105,7 +106,9 @@ export default function EditVideo() {
                     <div className="content">
                         {
                             show === "details" ?
-                                <EditVideoDetails {...editVideo.videoDetails!} token={authentication.token!}/> : null
+                                <EditVideoDetails {...editVideo.videoDetails!} token={authentication.token!}/> : 
+                                show === "analytics" ?
+                                    <VideoAnaylsis token={authentication.token!} /> : null
                         }
                     </div>
                 </div>

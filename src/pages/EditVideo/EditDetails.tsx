@@ -10,7 +10,7 @@ import { getServerUrl, fetchGraphQl, TrainerVideoInputInformtion } from "../../u
 
 import { deleteTrainersVideo, updateTrainersVideo } from "../../graphQlQuieries";
 
-export type Props = {
+type Props = {
     token: string
     id: string;
     title: string;
