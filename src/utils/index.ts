@@ -4,6 +4,8 @@ export * from "./fetchGraphQl";
 
 export * from "./urls";
 
+export { default as socket } from "./socket";
+
 export const delay = (ms: number) => {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -58,3 +60,6 @@ export const shortenNumber = ( num : number ) => {
     else return `${num/trillion} trillion`;
 }
 
+export const capitalizeFirstLetter = (sent: string) => {
+    return sent.charAt(0).toUpperCase() + sent.slice(1);
+}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams, useLocation } from "react-router-dom";
 
 import { useSessionHandler, useEditTrainersVideo } from "../../hooks";
 
@@ -13,6 +13,7 @@ import { AiOutlineMessage, AiOutlineDownload } from "react-icons/ai";
 
 import { EditVideoDetails } from "./EditDetails";
 import { VideoAnaylsis } from "./VideoAnalysis";
+import { VideoComments } from "./VideoComments";
 
 import "./index.css";
 
@@ -23,9 +24,15 @@ export default function EditVideo() {
 
     let { videoId } = useParams();
 
+    const location = useLocation();
+
+    let queryShow = new URLSearchParams(location.search).get("show");
+
+    queryShow = ["details", "analytics", "comments"].includes(queryShow || "" ) ? queryShow : "details";
+
     const editVideo = useEditTrainersVideo(authentication.token!, videoId as string);
 
-    const [show, setShow] = useState('details');
+    const [show, setShow] = useState(queryShow);
 
     if (authentication.loading) return <Loading />;
 
@@ -108,7 +115,7 @@ export default function EditVideo() {
                             show === "details" ?
                                 <EditVideoDetails {...editVideo.videoDetails!} token={authentication.token!}/> : 
                                 show === "analytics" ?
-                                    <VideoAnaylsis token={authentication.token!} /> : null
+                                    <VideoAnaylsis token={authentication.token!} /> : <VideoComments token={authentication.token!} videoId={videoId!} />
                         }
                     </div>
                 </div>

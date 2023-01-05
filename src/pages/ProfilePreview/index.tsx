@@ -77,17 +77,6 @@ const TrainersDetails: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="trainer-dets-button">
-                        <AiFillMessage color="#FF3636" size={40} title="message" className="button" />
-                        <IoIosShareAlt color="#FF3636" size={40} title="share" className="button" />
-                        {
-                            trainerDetails.data?.onBoardCompleted ?
-                                <div className="trainer-price button">
-                                    <MdAttachMoney color="#FF3636" size={40} title={`Become a client for $${trainerDetails.data?.price}`} />
-                                </div> :
-                                <MdMoneyOff color="#FF3636" size={40} title="Can't become client until trainer is verified" className="button" />
-                        }
-                    </div>
                 </div>
 
                 <div className="TrainersSlides">

@@ -59,7 +59,8 @@ export type UserData = {
 export enum TrainersDecision {
     PENDING = "PENDING",
     ACCEPTED = "ACCEPTED",
-    DENIED = "DENIED"
+    DENIED = "DENIED",
+    VERIFYING_PAYMENT = "VERIFYING_PAYMENT"
 }
 
 export type TrainersClient = {
@@ -156,4 +157,19 @@ export type TrainersVideoAnalysis = {
             nonClientDislike: number;
         }
     }
+}
+
+export type TrainersVideoComments = {
+    id: string;
+    comment: string;
+    updatedAt: number;
+    whoCreatedName: string;
+    whoCreatedProfilePicture: string;
+}
+
+export type TrainersNotes = {
+    id: string;
+    note: string;
+    updatedAt: number;
+    createdAt: number;
 }

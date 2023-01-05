@@ -15,3 +15,7 @@ export * from "./TrainerInformationToSave";
 export * from "./TrainerVideoInputInformation";
 
 export * from "./GetAllTrainerVideosQueryResult";
+
+export * from "./TrainerClient";
+
+export * from "./Food";

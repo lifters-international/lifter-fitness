@@ -169,6 +169,61 @@
     font-size: 22px;
 }
 
+.EditVideoPage .VideoComments {
+    width: 90vw;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5vh;
+}
+
+.EditVideoPage .VideoComments .comment {
+    display: flex;
+    overflow-x: none;
+    color: rgb(71, 71, 71);
+    margin-bottom: 40px;
+    margin-bottom: 5vh;
+}
+
+.EditVideoPage .VideoComments .comment .profile-pic {
+    border-radius: 50px;
+}
+
+.EditVideoPage .VideoComments .comment .name-date {
+    display: flex;
+}
+
+.EditVideoPage .VideoComments .comment .name-date .name {
+    color: rgb(95, 93, 93);
+}
+
+.EditVideoPage .VideoComments .postComment {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    position: sticky;
+    bottom: 0;
+}
+
+.EditVideoPage .VideoComments .postComment .comment-text {
+    background: rgb(15, 15, 15);
+    color: rgb(71, 71, 71);
+    border: 1px solid rgb(17, 17, 17);
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+}
+
+.EditVideoPage .VideoComments .postComment .submitComment {
+    border-radius: 5px;
+    padding: 10px;
+    background: #FF3636;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.EditVideoPage .VideoComments .postComment .submitComment:hover {
+    background: red;
+}
 
 @media only screen and (max-width: 845px) {
     .EditVideoPage .PreviewVideo .VideoContainer {

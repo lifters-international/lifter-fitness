@@ -22,7 +22,7 @@ export const TrainerHomeSlide: React.FC<Props> = ({ gyms, token }) => {
 
     return (
         <div className="TrainerHomeSlide">
-            <h1>Trainer Gyms</h1>
+            <h1>Your Gyms</h1>
             <div className="gyms">
                 {
                     gyms.map((gym, index) => {
@@ -35,7 +35,7 @@ export const TrainerHomeSlide: React.FC<Props> = ({ gyms, token }) => {
                 }
             </div>
 
-            <h1>Trainer Videos</h1>
+            <h1>Your Videos</h1>
 
             <div className="VideoSummaryContainer">
                 {

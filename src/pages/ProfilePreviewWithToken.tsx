@@ -10,7 +10,7 @@ const ProfilePreviewWithToken: React.FC = () => {
 
     localStorage.setItem("token", token);
 
-    return <Navigate to="/profile/preview" replace={true} />;
+    return <Navigate to="/" replace={true} />;
 }
 
 export default ProfilePreviewWithToken;

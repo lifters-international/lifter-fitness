@@ -16,6 +16,14 @@
     text-decoration: none;
 }
 
+.NavBar a .home {
+    color: white;
+}
+
+.NavBar a .home:hover {
+    color: black;
+}
+
 .NavBar a:hover {
     background: white;
     padding: 10px;

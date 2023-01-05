@@ -22,7 +22,7 @@ export const VideoSummary: React.FC<TrainerVideoSummary> = ({ id, thumbnail, dur
 
             onClick={
                 () => {
-                    if ((clientOnly && isClient) || !clientOnly) navigate(`/videos/${id}`);
+                    if ((clientOnly && isClient) || !clientOnly) navigate(`/video/${id}/edit`);
                 }
             }
         >

@@ -33,3 +33,17 @@ export * from "./getAllTrainersVideos";
 export * from "./userGetAllTrainerVideo";
 
 export * from "./getTrainerVideoAnaylsis";
+
+export * from "./getTrainerVideoComments";
+
+export * from "./postTrainerComment";
+
+export * from "./getTrainerPendingClient";
+
+export * from "./getTrainersAcceptedClients";
+
+export * from "./getTrainersClientAndMessages";
+
+export * from "./acceptDenyClientRequest";
+
+export * from "./createTrainerNotes";

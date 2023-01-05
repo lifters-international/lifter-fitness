@@ -1,11 +1,10 @@
 import React, { useState, useRef } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
-import { useSessionHandler, useSignInTrainerData } from "../../hooks";
+import { useSessionHandler, useSignInTrainerData, useSaveTrainerProfileChanges } from "../../hooks";
 
 import { Loading, Error, NavBar, TrainersGym, Modal, NotifyStateManager, NotifyStateManagerType, Notify } from "../../components";
 
 import "./index.css";
-import { useSaveTrainerProfileChanges } from "../../hooks/useSaveTrainerProfileChanges";
 import { fetchGraphQl, getImageUploadApi, TrainerInformationToSave } from "../../utils";
 import { updateTrainerPassword, addNewTrainersGym } from "../../graphQlQuieries";
 

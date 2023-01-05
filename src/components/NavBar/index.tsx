@@ -6,6 +6,9 @@ import Error from "../Error";
 import { getTrainerStripeDashBoardLoginLink } from "../../graphQlQuieries";
 import { fetchGraphQl } from "../../utils";
 
+import { FaDumbbell } from "react-icons/fa";
+import { MdVideoSettings, MdPersonPin, MdMonetizationOn } from "react-icons/md";
+
 import "./index.css";
 
 export type Props = {
@@ -40,17 +43,17 @@ const NavBar : React.FC<Props> = ({ token }) => {
 
     return (
         <div className="NavBar">
-            <a href="/">Home</a>
+            <a href="/"><FaDumbbell size={60} className="home"/></a>
 
             <div className="seperator">
 
-                <a href={dashBoardLink} target="_blank" rel="noopener noreferrer" >Dashboard</a>
+                <a href={dashBoardLink} target="_blank" rel="noopener noreferrer" > <MdMonetizationOn size={40} color="#FF3636"/> </a>
 
-                <a>Clients</a>
+                <a href="/clients"> <MdPersonPin size={40} color="#FF3636" /> </a>
 
-                <a href="/videos">Videos</a>
+                <a href="/videos"> <MdVideoSettings size={40} color="#FF3636" /> </a>
 
-                <a href="/profile/preview">Profile Preview</a>
+                <a href="/profile"> <FaDumbbell size={40} color="#FF3636" /> </a>
             </div>
         </div>
     )
