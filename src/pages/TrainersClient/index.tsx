@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { Navigate, Link } from "react-router-dom";
 
 import { useSessionHandler, usePendingClients, useAcceptedClients } from "../../hooks";
 
-import { Loading, Error, NavBar, TrainersGym, Modal, NotifyStateManager, NotifyStateManagerType, Notify } from "../../components";
+import { Loading, Error, NavBar } from "../../components";
 
 import AcceptedClientsView from "./AcceptedClientsView";
 
@@ -14,7 +14,7 @@ import "./index.css";
 
 const TrainersClient: React.FC = () => {
     const authentication = useSessionHandler();
-    const [socketAuthenticated, setSocketAuthenticated] = React.useState(false);
+    const [socketAuthenticated, setSocketAuthenticated] = useState(false);
     const pendingClients = usePendingClients(authentication.token!);
     const acceptedClients = useAcceptedClients(authentication.token!);
 

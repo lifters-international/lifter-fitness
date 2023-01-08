@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { useNavigate, useParams } from "react-router-dom";
 
-import { Loading, Error, AlertPrompt, AlertPromptProps, LabelInputDiv, RegisterButton } from "../../components";
+import { Loading, Error, AlertPrompt, AlertPromptProps, LabelInputDiv, RegisterButton, CheckBox } from "../../components";
 
 import { FileUploader } from "react-drag-drop-files";
 
@@ -23,7 +23,7 @@ type Props = {
     isPublic: boolean;
 }
 
-export const EditVideoDetails: React.FC<Props> = ({ token, thumbnail, title, description, isPublic, clientOnly, allowLikes, allowDislikes }) => {
+export const EditVideoDetails: React.FC<Props> = ({ token, thumbnail, title, description, isPublic, clientOnly, allowLikes, allowDislikes, allowComments }) => {
     const navigate = useNavigate();
 
     let { videoId } = useParams();
@@ -35,6 +35,10 @@ export const EditVideoDetails: React.FC<Props> = ({ token, thumbnail, title, des
     const [error, setError] = useState<string | null>(null);
 
     const [formState, setFormState] = useState<TrainerVideoInputInformtion>();
+
+    useEffect(() => {
+        console.log(formState);
+    }, [formState])
 
     const [ alertState, setAlertState] = useState<AlertPromptProps>({
         show: false, 
@@ -57,9 +61,11 @@ export const EditVideoDetails: React.FC<Props> = ({ token, thumbnail, title, des
                 setLoading(false);
                 
                 if ( res.url ) {
-                    setFormState({
-                        ...formState,
-                        thumbnail: res.url
+                    setFormState(prev => {
+                        return {
+                            ...prev,
+                            thumbnail: res.url
+                        }
                     });
                 }else {
                     setError("There was a problem uploading the thumbnail.")
@@ -98,10 +104,12 @@ export const EditVideoDetails: React.FC<Props> = ({ token, thumbnail, title, des
             <div className="editVidButtons">
 
                 <RegisterButton title="Save Video Settings" onClick={ async () => {
+                    console.log(  { updateTrainersVideoId: videoId, token, input: formState }  );
                     setLoading(true);
-                    let req = await fetchGraphQl(updateTrainersVideo, { updateTrainersVideoId: videoId, token, input: formState });
+                    let req = await fetchGraphQl(updateTrainersVideo, { updateTrainersVideoId: videoId, token, input: formState || {} });
                     setLoading(false);
-                    if ( req.errors ) {
+                    if ( req.errors) {
+                        console.log( req.errors)
                         setAlertState( prev => {
                             return {
                                 ...prev,
@@ -173,9 +181,11 @@ export const EditVideoDetails: React.FC<Props> = ({ token, thumbnail, title, des
                 <label htmlFor="title">Title</label>
                 <input placeholder="Video's Title" type="text" name="title" defaultValue={title} onChange={
                     (e) => {
-                        setFormState({
-                            ...formState,
-                            title: e.target.value
+                        setFormState(prev => {
+                            return {
+                                ...prev,
+                                title: e.target.value
+                            }
                         })
                     }
                 } />
@@ -185,106 +195,85 @@ export const EditVideoDetails: React.FC<Props> = ({ token, thumbnail, title, des
                 <label htmlFor="desc">Description</label>
                 <input placeholder="Video's Description" type="text" name="desc" defaultValue={description} onChange={
                     (e) => {
-                        setFormState({
-                            ...formState,
-                            description: e.target.value
+                        setFormState(prev => {
+                            return {
+                                ...prev,
+                                description: e.target.value
+                            }
                         })
                     }
                 } />
             </LabelInputDiv>
 
-            <LabelInputDiv>
-                <div>
-                    <label htmlFor="publicVideo">Video is public</label>
-                    <input
-                        type="checkbox"
-                        name="publicVideo"
-                        placeholder="Yes it is public"
-                        defaultChecked={isPublic}
-                        onChange={
-                            (e) => {
-                                setFormState({
-                                    ...formState,
-                                    isPublic: e.target.checked
-                                })
-                            }
+            <CheckBox
+                checked={isPublic}
+                label="Video is public"
+                des="Public video allows the video to be watched. Private Videos can not be access by anyone but the creator."
+                onChange={( val ) => {
+                    setFormState(prev => {
+                        return {
+                           ...prev,
+                           isPublic: val
                         }
-                    />
-                    <div>Public video allows the video to be watched. Private Videos can not be access by anyone but the creator.</div>
-                </div>
-            </LabelInputDiv>
+                    })
+                }}
+            />
 
-            
-
-            <LabelInputDiv>
-                <div>
-                    <label htmlFor="clientOnly">Is Video For Clients Only</label>
-                    <input
-                        type="checkbox"
-                        name="clientOnly"
-                        placeholder="Yes it is client only"
-                        defaultChecked={clientOnly}
-                        onChange={
-                            (e) => {
-                                setFormState({
-                                    ...formState,
-                                    clientOnly: e.target.checked
-                                })
-                            }
+            <CheckBox
+                checked={clientOnly}
+                label="Is Video For Clients Only"
+                des="No one other than your clients will be allowed to see video. The video will still need to be public."
+                onChange={( val ) => {
+                    setFormState(prev => {
+                        return {
+                           ...prev,
+                           clientOnly: val
                         }
-                    />
+                    })
+                }}
+            />
 
-                    <div>No one other than your clients will be allowed to see video. The video will still need to be public.</div>
-                </div>
-
-            </LabelInputDiv>
-
-            <LabelInputDiv>
-                <div>
-                    <label htmlFor="allowLikes">Allow Likes</label>
-                    <input
-                        type="checkbox"
-                        name="allowLikes"
-                        placeholder="Yes it is likeable"
-                        defaultChecked={allowLikes}
-                        onChange={
-                            (e) => {
-                                setFormState({
-                                    ...formState,
-                                    allowLikes: e.target.checked
-                                })
-                            }
+            <CheckBox
+                checked={allowLikes}
+                label="Allow Likes"
+                des="Whether or not people can like the video"
+                onChange={( val ) => {
+                    setFormState(prev => {
+                        return {
+                           ...prev,
+                           allowLikes: val
                         }
-                    />
+                    })
+                }}
+            />
 
-                    <div>Whether or not people can like the video</div>
-                </div>
-
-            </LabelInputDiv>
-
-            <LabelInputDiv>
-                <div>
-                    <label htmlFor="allowLikes">Allow DisLikes</label>
-                    <input
-                        type="checkbox"
-                        name="allowdisLikes"
-                        placeholder="Yes it is likeable"
-                        defaultChecked={allowDislikes}
-                        onChange={
-                            (e) => {
-                                setFormState({
-                                    ...formState,
-                                    allowDislikes: e.target.checked
-                                })
-                            }
+            <CheckBox
+                checked={allowDislikes}
+                label="Allow DisLikes"
+                des="Whether or not people can dislike the video"
+                onChange={( val ) => {
+                    setFormState(prev => {
+                        return {
+                           ...prev,
+                           allowDislikes: val
                         }
-                    />
+                    })
+                }}
+            />
 
-                    <div>Whether or not people can dislike the video</div>
-                </div>
-
-            </LabelInputDiv>
-
+            <CheckBox
+                checked={allowComments}
+                label="Allow Comments"
+                des="Whether or not people can comment on the video"
+                onChange={( val ) => {
+                    setFormState(prev => {
+                        return {
+                           ...prev,
+                           allowComments: val
+                        }
+                    })
+                }}
+            />
 
         </div>
     )

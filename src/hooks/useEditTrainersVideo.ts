@@ -15,10 +15,10 @@ export type EditTrainersVideoState = {
         thumbnail: string;
         createdAt: number;
         updatedAt: number;
-        comments: { id : string }[];
-        likes: { id : string }[];
-        disLikes: { id : string }[];
-        viewHistory: { id : string }[];
+        comments: { id: string }[];
+        likes: { id: string }[];
+        disLikes: { id: string }[];
+        viewHistory: { id: string }[];
         clientOnly: boolean;
         allowComments: boolean;
         allowLikes: boolean;
@@ -35,15 +35,15 @@ export type EditTrainersVideoState = {
     };
 }
 
-export const useEditTrainersVideo = ( token : string, videoId: string ) => {
-    const [ state, setState ] = useState<EditTrainersVideoState>({
+export const useEditTrainersVideo = (token: string, videoId: string) => {
+    const [state, setState] = useState<EditTrainersVideoState>({
         loading: true,
         videoExists: true,
         error: null
     });
 
     const getVideoInformation = async () => {
-        if ( token == null ) return;
+        if (token == null) return;
 
         let req = await fetchGraphQl(getTrainersVideo, { token, videoId });
 
@@ -55,10 +55,10 @@ export const useEditTrainersVideo = ( token : string, videoId: string ) => {
             thumbnail: string;
             createdAt: number;
             updatedAt: number;
-            comments: { id : string }[];
-            likes: { id : string }[];
-            disLikes: { id : string }[];
-            viewHistory: { id : string }[];
+            comments: { id: string }[];
+            likes: { id: string }[];
+            disLikes: { id: string }[];
+            viewHistory: { id: string }[];
             clientOnly: boolean;
             allowComments: boolean;
             allowLikes: boolean;
@@ -71,39 +71,45 @@ export const useEditTrainersVideo = ( token : string, videoId: string ) => {
             };
         } = req.data.getTrainersVideo;
 
-        if ( req.errors ) {
-            if ( req.errors[0].message === "Video Does Not Exist." ) {
-                setState({
-                    ...state,
-                    loading: false,
-                    videoExists: false,
+        if (req.errors) {
+            if (req.errors[0].message === "Video Does Not Exist.") {
+                setState(prev => {
+                    return {
+                        ...prev,
+                        loading: false,
+                        videoExists: false,
+                    }
                 })
-            }else {
-                setState({
-                   ...state,
-                    loading: false,
-                    error: req.errors[0].message,
+            } else {
+                setState(prev => {
+                    return {
+                        ...prev,
+                        loading: false,
+                        error: req.errors[0].message,
+                    }
                 })
             }
-        }else {
-            setState({
-               ...state,
-                loading: false,
-                videoExists: true,
-                videoDetails: {
-                    ...data,
-                    commentCount: data.comments.length,
-                    likeCount: data.likes.length,
-                    disLikeCount: data.disLikes.length,
+        } else {
+            setState(prev => {
+                return {
+                    ...prev,
+                    loading: false,
+                    videoExists: true,
+                    videoDetails: {
+                        ...data,
+                        commentCount: data.comments.length,
+                        likeCount: data.likes.length,
+                        disLikeCount: data.disLikes.length,
+                    }
                 }
-            })
+            });
         }
 
-    } 
+    }
 
     useEffect(() => {
         getVideoInformation()
-    }, [ token ]);
+    }, [token]);
 
     return state;
 }

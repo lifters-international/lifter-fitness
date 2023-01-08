@@ -25,3 +25,5 @@ export * from "./Notify";
 export * from "./PreviewVideo";
 
 export * from "./AlertPrompt";
+
+export * from "./CheckBox";
