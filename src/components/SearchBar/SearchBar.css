@@ -1,0 +1,46 @@
+.SearchBar {
+    width: 50%;
+    display: grid;
+    grid-template-columns: 65% 15%;
+    border-radius: 5px;
+}
+
+.SearchBarInput {
+    height: 20px;
+    border: 2px solid black;
+    border-right: none;
+    border-radius: 5px;
+    padding: 5px;
+    color: #afadad;
+    font-family: "IM FELL Great Primer SC", serif;
+    background: #2c2b2b;
+}
+
+.SearchBarInput::placeholder {
+    color: #afadad;
+}
+
+.SearchBarInput:active, .SearchBarInput:focus {
+    border: none;
+    outline: none;
+}
+
+.SearchBarInput::placeholder {
+    color: black;
+    font-family: "IM FELL Great Primer SC", serif;
+}
+
+.SearchBarIcon {
+    height: 29px;
+    width: 70%;
+    position: relative;
+    right: 3.5vw;
+    top: -0.1vh;
+    padding: 5px;
+}
+
+@media only screen and (max-width: 845px) {
+    .SearchBarIcon {
+        right: 7vw;
+    }
+}

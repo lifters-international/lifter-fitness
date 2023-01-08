@@ -1,0 +1,132 @@
+.FoodDetails {
+    border: 2px solid hsl(0, 0%, 22%);
+    border-radius: 10px;
+    padding: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    color: white;
+}
+
+.FoodDetails__Name {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+}
+
+.FoodDetails__ImportantInfor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.FoodDetails__TextImportant, .FoodDetails__TextImportantFacts {
+    font-size: 15px;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.FoodDetails__TextImportantFacts {
+    text-align: center;
+    margin-top: 20px;
+    color: #5e5c5c;
+    font-weight: bold;
+    font-size: 20px;
+    border-top: 1px solid #5e5c5c;
+}
+
+.FoodDetails__NutritionFacts {
+    max-height: 150px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    overflow: auto;
+}
+
+.FoodDetails__NutritionFacts::-webkit-scrollbar {
+    width: 10px;
+}
+
+.FoodDetails__Divide {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.FoodDetails__TextImportant {
+    color: #5e5c5c;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.FoodDetails_Button {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #FF3636;
+    padding: 10px;
+    border-radius: 10px;
+    
+}
+
+.VerifiedFood, .UnVerifiedFood {
+    background: green;
+    color: white;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    position: relative;
+    bottom: 5vh;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.UnVerifiedFood {
+    background: red;
+}
+
+@media only screen and (max-width: 845px) {
+    .FoodContainer {
+        z-index: -1;
+        position: relative;
+    }
+
+    .FoodItemView {
+        position: absolute;
+        top: 10vh;
+        width: 100%;
+    }
+
+    .FoodViewIconDiv {
+        bottom: 2px;
+    }
+
+    .FoodSearchView_Analysis {
+        left: 10%;
+    }
+
+    .FoodDetails {
+        width: 70vw;
+    }
+
+    .VerifiedFood, .UnVerifiedFood {
+        bottom: 1vh;
+        right: 22vw;
+    }
+}

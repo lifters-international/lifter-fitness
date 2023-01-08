@@ -1,0 +1,61 @@
+.VideosPage .container .header {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 1vh;
+}
+
+.VideosPage .container .header .videoSearchView {
+    width: 100%;
+}
+
+.VideosPage .container .header .videoSearchView_input {
+    width: 90vw;
+    height: 3vh;
+}
+
+.VideosPage .container .header .createVideo {
+    position: relative;
+    bottom: 0.5vh;
+    right: 3vw;
+}
+
+.VideosPage .container .content {
+    border-top: 1px solid rgb(56, 55, 55);
+    margin-top: 30px;
+}
+
+.VideosPage .container .content .titleBars {
+    display: grid;
+    grid-template-columns: 30% 11.6% 11.6% 11.6% 11.6% 11.6% 11.6%;
+    margin-top: 10px;
+    color: hsl(0, 0%, 22%);
+}
+
+.VideosPage .container .content .videos .video {
+    display: grid;
+    grid-template-columns: 30% 11.6% 11.6% 11.6% 11.6% 11.6% 11.6%;
+    border-top: 1px solid rgb(56, 55, 55);
+    border-bottom: 1px solid rgb(56, 55, 55);
+    color: hsl(0, 0%, 22%);
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.VideosPage .container .content .videos .video .video-desc {
+    display: grid;
+    grid-template-columns: 35% 65%;
+}
+
+.VideosPage .container .content .videos .video .video-desc img.thumbnail {
+    width: 10vw;
+    height: 10vh;
+}
+
+.VideosPage .container .content .videos .video .video-desc .vid-t-d {
+    grid-template-rows: 35% 65%;
+}
+
+.VideosPage .container .content .videos .video .video-desc .vid-t-d .title {
+    color: rgb(112, 111, 111);
+}

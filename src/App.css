@@ -1,3 +1,7 @@
+body {
+  background-color: black;
+}
+
 .App {
   text-align: center;
 }
@@ -32,7 +36,30 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.selection-label-input-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.selection-label-input-div__select {
+  width: 50%;
+  margin: 1rem;
+}
+
+.circle {
+  background-color: #383838;
+  cursor: pointer;
+  display: inline-block;
+  height: 30px;
+  margin-left: 10%;
+  text-align: center;
+  width: 100vw;
 }

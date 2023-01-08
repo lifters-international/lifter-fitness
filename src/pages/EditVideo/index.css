@@ -1,0 +1,285 @@
+.EditVideoPage .PreviewVideo {
+    width: 90vw;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+}
+
+.EditVideoPage .PreviewVideo .VideoContainer {
+    width: 52vw;
+    left: 20vw;
+    margin: 0 auto;
+}
+
+.EditVideoPage .PreviewVideo .imageContainer .timeStamp {
+    left: 66vw;
+}
+
+.EditVideoPage .VideoDetailsContainer .vidDetails {
+    width: 54vw;
+    position: relative;
+    left: 25vw;
+    top: -4vh;
+}
+
+.EditVideoPage .VideoDetailsContainer .vidDetails .title {
+    color: rgb(120, 120, 120);
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+
+.EditVideoPage .VideoDetailsContainer .vidDetails .dets {
+    color: rgb(75, 75, 75);
+    font-size: 20px;
+    display: flex;
+    gap: 25vw;
+}
+
+.EditVideoPage .VideoDetailsContainer .vidDetails .dets div {
+    display: flex;
+}
+
+.EditVideoPage .VideoDetailsContainer .vidDetails .dets .buttons {
+    gap: 5vw;
+    width: 20vw;
+}
+
+.EditVideoPage .VideoDetailsContainer .vidDetails .dets .buttons .likeDislike {
+    display: flex;
+    width: 15vw;
+    gap: 2px;
+    border: 1px solid rgb(85, 85, 85);
+    background: hsl(0, 0%, 7%);
+    border-radius: 10px;
+    padding: 5px;
+    color: rgb(69, 69, 69);
+}
+
+.EditVideoPage .VideoDetailsContainer .vidDetails .dets .buttons .likeDislike .holder {
+    display: flex;
+    gap: 10px;
+}
+
+.EditVideoPage .VideoDetailsContainer .vidDetails .dets .buttons .likeDislike .holder.like {
+    border-right: 1px solid rgb(85, 85, 85);
+    width: 55%;
+}
+
+.EditVideoPage .VideoDetailsContainer .vidDetails .dets .buttons .likeDislike .holder span {
+    position: relative;
+    top: 0.4vh;
+}
+
+.EditVideoPage .SlideShow .tabs {
+    border-bottom: 1px solid hsl(0, 0%, 22%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.EditVideoPage .SlideShow .tabs .tab {
+    margin-bottom: 10px;
+}
+
+.EditVideoPage .SlideShow .tabs .tab.showing {
+    border-bottom: 1px solid #FF3636;
+}
+
+.EditVideoPage .SlideShow .content .editVideoDetails {
+    width: 90vw;
+}
+
+.EditVideoPage .SlideShow .content .editVideoDetails .thumbnail {
+    width: 50vw;
+    height: 30vh;
+    position: relative;
+    left: 22vw;
+}
+
+.EditVideoPage .SlideShow .content .editVideoDetails .editVidButtons {
+    display: flex;
+    align-items: right;
+    justify-content: flex-end;
+    gap: 3vw;
+}
+
+.EditVideoPage .VideoAnaylsis .summary-container {
+    display: grid;
+    grid-template-columns: repeat(5, 20vw);
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+}
+
+.EditVideoPage .VideoAnaylsis .summary-container .sum {
+    background: rgb(14, 14, 14);
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 1vw;
+    height: 20vh;
+}
+
+.EditVideoPage .VideoAnaylsis .summary-container .sum .title {
+    text-align: center;
+    color: rgb(39, 38, 38);
+}
+
+.EditVideoPage .VideoAnaylsis .summary-container .sum .count {
+    font-size: 60px;
+    text-align: center;
+    position: relative;
+    top: 4vh;
+    color: rgb(73, 70, 70);
+}
+
+.EditVideoPage .VideoAnaylsis .summary-container .sum .hover {
+    display: flex;
+    gap: 0.5vw;
+    position: relative;
+    top: 6vh;
+    left: 6.6vw;
+    font-size: 20px;
+}
+
+.EditVideoPage .VideoAnaylsis .summary-container .sum .hover.up {
+    color: rgb(36, 206, 36);
+}
+
+.EditVideoPage .VideoAnaylsis .summary-container .sum .hover.down {
+    color: #FF3636;
+}
+
+.EditVideoPage .VideoAnaylsis .chartsContainer, .EditVideoPage .VideoAnaylsis .pieContainer {
+    background: rgb(8, 8, 8);
+    display: grid;
+    grid-template-columns: repeat(2, 47vw);
+    width: 90vw;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 3vh;
+}
+
+.EditVideoPage .VideoAnaylsis .pieContainer {
+    grid-template-columns: repeat(4, 23vw);
+}
+
+.EditVideoPage .VideoAnaylsis .chartsContainer .charts .title, .EditVideoPage .VideoAnaylsis .pieContainer .title {
+    color: rgb(88, 87, 87);
+    text-align: center;
+    font-size: 22px;
+}
+
+.EditVideoPage .VideoComments {
+    width: 90vw;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5vh;
+}
+
+.EditVideoPage .VideoComments .comment {
+    display: flex;
+    overflow-x: none;
+    color: rgb(71, 71, 71);
+    margin-bottom: 40px;
+    margin-bottom: 5vh;
+}
+
+.EditVideoPage .VideoComments .comment .profile-pic {
+    border-radius: 50px;
+}
+
+.EditVideoPage .VideoComments .comment .name-date {
+    display: flex;
+}
+
+.EditVideoPage .VideoComments .comment .name-date .name {
+    color: rgb(95, 93, 93);
+}
+
+.EditVideoPage .VideoComments .postComment {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    position: sticky;
+    bottom: 0;
+}
+
+.EditVideoPage .VideoComments .postComment .comment-text {
+    background: rgb(15, 15, 15);
+    color: rgb(71, 71, 71);
+    border: 1px solid rgb(17, 17, 17);
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+}
+
+.EditVideoPage .VideoComments .postComment .submitComment {
+    border-radius: 5px;
+    padding: 10px;
+    background: #FF3636;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.EditVideoPage .VideoComments .postComment .submitComment:hover {
+    background: red;
+}
+
+@media only screen and (max-width: 845px) {
+    .EditVideoPage .PreviewVideo .VideoContainer {
+        width: 100%;
+        left: 0;
+    }
+
+    .EditVideoPage .PreviewVideo .imageContainer .timeStamp {
+        left: 70vw;
+        width: 20vw;
+    }
+
+    .EditVideoPage .VideoDetailsContainer .vidDetails {
+        top: -1.5vw;
+        left: 0;
+        margin-bottom: 20px;
+    }
+
+    .EditVideoPage .VideoDetailsContainer .vidDetails .title {
+        width: 98vw;
+        margin-bottom: 12px;
+    }
+
+    .EditVideoPage .VideoDetailsContainer .vidDetails .dets {
+        gap: 22vw;
+    }
+
+    .EditVideoPage .VideoDetailsContainer .vidDetails .dets .buttons {
+        justify-content: space-between;
+    }
+
+    .EditVideoPage .VideoDetailsContainer .vidDetails .dets .buttons .likeDislike {
+        width: 45vw;
+    }
+
+    .EditVideoPage .VideoDetailsContainer .vidDetails .dets .buttons .likeDislike .holder.like {
+        width: 12vw;
+    }
+
+    .EditVideoPage .VideoAnaylsis .summary-container {
+        grid-template-columns: repeat(1, 80vw);
+        width: 80vw;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .EditVideoPage .VideoAnaylsis .summary-container .sum {
+        margin-bottom: 1vh;
+    }
+
+    .EditVideoPage .VideoAnaylsis .summary-container .sum .hover {
+        top: 5vh;
+        left: 30vw;
+    }
+
+    .EditVideoPage .VideoAnaylsis .chartsContainer, .EditVideoPage .VideoAnaylsis .pieContainer {
+        grid-template-columns: repeat(1, 80vw);
+    }
+}

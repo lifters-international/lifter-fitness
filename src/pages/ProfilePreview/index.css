@@ -1,0 +1,197 @@
+.TrianerDetails div {
+  color: rgb(255, 255, 255);
+}
+
+.TrianerDetails h1 {
+  text-align: center;
+  color:hsl(0, 0%, 22%);
+}
+
+.TrianerDetails .bannerImage {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.TrianerDetails .DetailsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.TrianerDetails .DetailsContainer .dets {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+}
+
+.TrianerDetails .DetailsContainer .dets .trainerProfilePicture {
+  border-radius: 30px;
+  width: 100px;
+  border: 1px solid rgb(59, 59, 59);
+}
+
+.TrianerDetails .DetailsContainer .dets .name-verification {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5vw;
+  font-size: 20px;
+}
+
+.TrianerDetails .DetailsContainer .trainer-dets-button {
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+  margin-top: 1vw;
+}
+
+.TrianerDetails .DetailsContainer .trainer-dets-button .button {
+  cursor: pointer;
+  text-align: center;
+}
+
+.TrianerDetails .DetailsContainer .trainer-dets-button div.trainer-price {
+  display: flex;
+  gap: 10px;
+}
+
+.TrianerDetails .DetailsContainer .trainer-dets-button div.price {
+  color: rgb(10, 250, 10);
+}
+
+.TrianerDetails .TrainersSlides .tabs {
+  border-bottom: 1px solid hsl(0, 0%, 22%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.TrianerDetails .TrainersSlides .tabs .tab {
+  margin-bottom: 10px;
+}
+
+.TrianerDetails .TrainersSlides .tabs .tab.showing {
+  border-bottom: 1px solid #ff3636;
+}
+
+.TrianerDetails .TrainersSlides .slide .TrainerHomeSlide .gyms {
+  display: flex;
+  align-items: center;
+  max-width: 99vw;
+  height: 7vw;
+  overflow-x: auto;
+}
+
+.TrianerDetails .TrainersSlides .slide .TrainerHomeSlide .gyms::-webkit-scrollbar {
+    background-color: transparent;
+    border: 1px solid rgb(44, 44, 44);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.TrianerDetails .TrainersSlides .slide .TrainerHomeSlide .gyms::-webkit-scrollbar-thumb {
+    background: rgb(20, 20, 20);
+    border-radius: 10px;
+}
+
+.TrianerDetails .TrainersSlides .slide .TrainerHomeSlide .gyms .gym {
+  width: 20vw;
+  height: 3vh;
+  border: 1px solid rgb(44, 44, 44);
+  background: rgb(20, 20, 20);
+  border-radius: 10px;
+  padding: 10px;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: rgb(150, 150, 150);
+  cursor: pointer;
+  white-space: nowrap;
+  margin-right: 20px;
+}
+
+.TrianerDetails .TrainersSlides .slide .TrainerHomeSlide .gyms .gym span {
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.TrianerDetails .TrainersSlides .slide 
+.TrainerHomeSlide .VideoSummaryContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 20vw);
+    width: 90vw;
+    gap: 2vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.TrianerDetails .TrainersSlides .slide 
+.TrainerHomeSlide .VideoSummaryContainer .videoSummary {
+    margin-bottom: 10vh;
+}
+
+.TrianerDetails .TrainersSlides .slide 
+.TrainerHomeSlide .VideoSummaryContainer .videoSummary.watchable {
+    cursor: pointer
+}
+
+.TrianerDetails .TrainersSlides .slide 
+.TrainerHomeSlide .VideoSummaryContainer .videoSummary .vidInfor {
+    width: 20vw;
+}
+
+.TrianerDetails .TrainersSlides .slide 
+.TrainerHomeSlide .VideoSummaryContainer .videoSummary 
+.vidInfor .thumbnail {
+    width: 20vw;
+    height: 12vw;
+    border-radius: 10px;
+}
+
+.TrianerDetails .TrainersSlides .slide 
+.TrainerHomeSlide .VideoSummaryContainer .videoSummary 
+.vidInfor .duration {
+    position: relative;
+    top: -3.5vh;
+    left: 17.2vw;
+    background: rgb(20, 20, 20);
+    color: rgb(150, 150, 150);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.TrianerDetails .TrainersSlides .slide
+.TrainerRatingSlide {
+    width: 90vw;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 28.7vw);
+    gap: 2vw;
+}
+
+.TrianerDetails .TrainersSlides .slide
+.TrainerRatingSlide .rating {
+    background: rgb(12, 12, 12);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.TrianerDetails .TrainersSlides .slide
+.TrainerRatingSlide .rating .name-prof-date {
+    display: flex;
+    flex-direction: row;
+}
+
+.TrianerDetails .TrainersSlides .slide
+.TrainerWriteSlide div {
+    margin-right: auto;
+    margin-left: auto;
+}

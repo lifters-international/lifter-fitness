@@ -1,0 +1,39 @@
+.NavBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    border-bottom: 1px solid #262625;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.NavBar a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #262625;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.NavBar a .home {
+    color: white;
+}
+
+.NavBar a .home:hover {
+    color: black;
+}
+
+.NavBar a:hover {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.NavBar .seperator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10vw;
+}

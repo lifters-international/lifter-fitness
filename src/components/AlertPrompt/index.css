@@ -1,0 +1,60 @@
+.AlertPrompt {
+    position: fixed;
+    width: 99vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    background: rgba(0, 0, 0, 0.637);
+}
+
+.AlertPrompt .container {
+    border: 1px solid rgb(54, 54, 54);
+    width: 35vw;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    top: 35vh;
+    left: 30vw;
+}
+
+.AlertPrompt .container .message {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+}
+
+.AlertPrompt .container .promptText {
+    width: 97%;
+    margin-top: 15px;
+}
+
+.AlertPrompt .container .buttons.noFlex {
+    width: -moz-fit-content;
+    width: fit-content;
+    position: relative;
+    left: 32vw;
+}
+
+.AlertPrompt .container .buttons.flex {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.AlertPrompt .container .buttons div {
+    border: 1px solid white;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.AlertPrompt .container .buttons .okay {
+    background: rgb(32, 128, 238);
+    border-color: rgb(32, 128, 238);
+}
+
+.AlertPrompt .container .buttons .cancel {
+    background: #FF3636;
+    border-color: #FF3636;
+}
