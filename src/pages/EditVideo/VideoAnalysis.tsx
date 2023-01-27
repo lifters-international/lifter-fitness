@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import { useParams } from "react-router-dom";
 
 import { FaArrowAltCircleUp, FaArrowAltCircleDown } from "react-icons/fa";
 
-import { Loading, Error } from "../../components";
+import { Loading, Error, AlertPrompt, AlertPromptProps, LabelInputDiv, RegisterButton } from "../../components";
 
 import { VictoryBar, VictoryChart, VictoryPie } from 'victory'
 
@@ -20,11 +20,7 @@ export const VideoAnaylsis: React.FC<Props> = ({ token }) => {
     let { videoId } = useParams();
     let videoAnaylsis = useGetTrainerVideoAnaylsis(token, videoId as string);
 
-    if (videoAnaylsis.loading) return (
-        <div className="VideoAnaylsis">
-            <Loading />
-        </div>
-    );
+    if (videoAnaylsis.loading) return <Loading />;
 
     if (videoAnaylsis.error) return <Error message="Problem getting video analysis from server" reload={true} />;
 

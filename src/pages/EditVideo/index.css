@@ -35,13 +35,6 @@
     gap: 25vw;
 }
 
-.EditVideoPage .VideoDetailsContainer .vidDetails .dets .profile-pic {
-    width: 4.5vw;
-    height: 4.5vh;
-    border-radius: 10px;
-    margin-right: 2vw;
-}
-
 .EditVideoPage .VideoDetailsContainer .vidDetails .dets div {
     display: flex;
 }
@@ -114,10 +107,6 @@
     grid-template-columns: repeat(5, 20vw);
     margin-top: 2vh;
     margin-bottom: 1vh;
-}
-
-.EditVideoPage .VideoAnaylsis .loading, .EditVideoPage .VideoComments .loading, .EditVideoPage .editVideoDetails .loading {
-    position: relative;
 }
 
 .EditVideoPage .VideoAnaylsis .summary-container .sum {
@@ -197,9 +186,6 @@
 
 .EditVideoPage .VideoComments .comment .profile-pic {
     border-radius: 50px;
-    width: 4vw;
-    height: 4.5vh;
-    margin-right: 1.5vw;
 }
 
 .EditVideoPage .VideoComments .comment .name-date {
@@ -213,7 +199,6 @@
 .EditVideoPage .VideoComments .postComment {
     display: grid;
     grid-template-columns: 90% 10%;
-    position: -webkit-sticky;
     position: sticky;
     bottom: 0;
 }
