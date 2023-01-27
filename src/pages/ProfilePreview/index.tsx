@@ -12,10 +12,9 @@ import { TrainerWriteSlide } from "./TrainerWriteSlide";
 
 import ReactStars from "react-rating-stars-component";
 
-import { MdVerifiedUser, MdAttachMoney, MdMoneyOff } from "react-icons/md";
-import { AiFillHome, AiFillMessage } from "react-icons/ai";
+import { MdVerifiedUser } from "react-icons/md";
+import { AiFillHome } from "react-icons/ai";
 import { BsStars } from "react-icons/bs";
-import { IoIosShareAlt } from "react-icons/io";
 import { HiPencil } from "react-icons/hi";
 
 import "./index.css";
@@ -39,6 +38,8 @@ const TrainersDetails: React.FC = () => {
             authentication.error[0].extensions.code === "BAD_USER_INPUT"
             ||
             authentication.error[0].message === "jwt expired"
+            ||
+            authentication.error[0].message === "Trainer does not exist."
         ) return <Navigate to="/createAccount" replace={true} />
         else if (authentication.error[0].message === "jwt expired") return <Navigate to="/logIn" replace={true} />
         else return <Error {...authentication.error[0]} reload={true} />;

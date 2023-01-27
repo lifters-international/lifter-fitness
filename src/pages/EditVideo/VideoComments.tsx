@@ -15,7 +15,11 @@ export const VideoComments: React.FC<Props> = ({ token, videoId }) => {
     const [showAll, setShowAll] = useState(false);
     const [ cState, setCState ] = useState("");
 
-    if (loading) return <Loading />;
+    if (loading) return (
+        <div className="VideoComments">
+            <Loading />
+        </div>
+    );
 
     if ( errorPostComment.length > 0 ) return <Error {...errorPostComment[0]} reload={true} />;
 
