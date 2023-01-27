@@ -3,13 +3,13 @@ export const getApiUrl = () => {
 }
 
 export const getWSApiUrl = () => {
-    return  `wss://${"https://server.lifters.app"}/graphql`;
+    return  `wss://${process.env.NODE_ENV === "production" ? "https://server.lifters.app" : "localhost:5000"}/graphql`;
 }
 
 export const getImageUploadApi = () => {
     return `${getServerUrl()}upload/image`;
 }
 
-export const getServerUrl = () => {
-    return "https://server.lifters.app/";
+export const getServerUrl = () => { 
+    return process.env.NODE_ENV === "production" ? "https://server.lifters.app/" : "http://localhost:5000/";
 } 
