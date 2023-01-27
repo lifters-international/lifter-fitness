@@ -3,7 +3,7 @@ export const getApiUrl = () => {
 }
 
 export const getWSApiUrl = () => {
-    return  `wss://${process.env.NODE_ENV === "production" ? "https://server.lifters.app" : "localhost:5000"}/graphql`;
+    return  `wss://${"https://server.lifters.app"}/graphql`;
 }
 
 export const getImageUploadApi = () => {
@@ -11,5 +11,5 @@ export const getImageUploadApi = () => {
 }
 
 export const getServerUrl = () => {
-    return process.env.NODE_ENV === "production" ? "https://server.lifters.app/" : "http://localhost:5000/";
+    return "https://server.lifters.app/";
 } 
