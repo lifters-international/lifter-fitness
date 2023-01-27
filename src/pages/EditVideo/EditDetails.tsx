@@ -36,10 +36,6 @@ export const EditVideoDetails: React.FC<Props> = ({ token, thumbnail, title, des
 
     const [formState, setFormState] = useState<TrainerVideoInputInformtion>();
 
-    useEffect(() => {
-        console.log(formState);
-    }, [formState])
-
     const [ alertState, setAlertState] = useState<AlertPromptProps>({
         show: false, 
         message: "",
@@ -74,7 +70,11 @@ export const EditVideoDetails: React.FC<Props> = ({ token, thumbnail, title, des
         }
     }, [ thumbnailImage ]);
 
-    if (loading) return <Loading />;
+    if (loading) return (
+        <div className="editVideoDetails">
+            <Loading />
+        </div>
+    );
 
     if (error) return <Error message={error as string} reload={true} />;
 

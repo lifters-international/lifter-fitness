@@ -10,6 +10,6 @@ export const getImageUploadApi = () => {
     return `${getServerUrl()}upload/image`;
 }
 
-export const getServerUrl = () => {
+export const getServerUrl = () => { 
     return process.env.NODE_ENV === "production" ? "https://server.lifters.app/" : "http://localhost:5000/";
 } 
